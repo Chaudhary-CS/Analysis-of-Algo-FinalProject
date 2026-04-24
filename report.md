@@ -74,7 +74,7 @@ Brute-force path search is factorial in complexity and is completely infeasible 
 
 We chose a mix of central Tampa hubs (Downtown, Convention Center, Channelside), neighborhoods (Ybor City, Seminole Heights, Hyde Park Village), services (Tampa General Hospital, Library, USF), commercial areas (International Plaza, Raymond James Stadium), and suburban zones (New Tampa, South Tampa, Brandon, Westchase). This gives us varied path lengths and a realistic graph structure rather than something artificially uniform.
 
-![Tampa Road Network](fig1_tampa_network.png)
+![Tampa Road Network](fig1_tampa_network.png?v=1)
 *Figure 1: Full Tampa road network. Blue = Downtown core, Green = neighborhoods, Orange = suburbs, Purple = commercial/transport. Edge weights are approximate driving miles verified via Google Maps.*
 
 ### 3.2 Edges: Tampa Road Connections
@@ -135,7 +135,7 @@ BFS(G, source):
 
 **Tampa use case:** Starting from Downtown, BFS tells us how many road segments separate each location, useful for minimizing the number of turns or intersections. BFS found that Downtown to Brandon takes only 3 hops: Downtown to Tampa General to South Tampa to Brandon.
 
-![BFS and DFS Traversal](fig3_bfs_dfs.png)
+![BFS and DFS Traversal](fig3_bfs_dfs.png?v=1)
 *Figure 2: BFS (left) vs DFS (right) from Downtown Tampa. Numbers below each node show the visit order. BFS visits level by level; DFS dives deep before backtracking.*
 
 ### 5.2 Depth-First Search (DFS)
@@ -191,7 +191,7 @@ Dijkstra(G, source):
 
 Kartik's note: Without the Dale Mabry connection (Downtown to Raymond James Stadium), Dijkstra was routing Downtown to Airport as 42 miles via USF, New Tampa, and Westchase. Adding that single road edge dropped it to 10 miles, which is the correct real-world distance. It showed us how one missing edge can completely break shortest-path results.
 
-![Dijkstra Shortest Paths](fig4_dijkstra.png)
+![Dijkstra Shortest Paths](fig4_dijkstra.png?v=1)
 *Figure 3: Dijkstra shortest path tree from Downtown Tampa (red node). Blue edges show the shortest path tree. Red labels show driving distance in miles to each location.*
 
 ### 5.4 Kruskal's Minimum Spanning Tree
@@ -227,7 +227,7 @@ UNION(x, y):
 
 Notable MST edges: the four 1-mile edges within Downtown's waterfront cluster (Downtown to Riverwalk, Museum of Art, Channelside, and Convention Center), Airport to International Plaza at 2 miles as the cheapest way to reach the airport cluster, and South Tampa to Brandon at 15 miles as the only affordable connection to include Brandon in the tree.
 
-![Kruskal Minimum Spanning Tree](fig2_mst.png)
+![Kruskal Minimum Spanning Tree](fig2_mst.png?v=1)
 *Figure 4: Left shows the full Tampa road network. Right shows Kruskal's MST (red edges only). The MST uses 19 of the 37 roads to connect all 20 locations at a total cost of 65 miles.*
 
 
